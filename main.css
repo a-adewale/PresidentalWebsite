@@ -1554,14 +1554,6 @@ button, input, textarea, select {
 
 }
 
-
-/* =========================================================
-   FINAL POLISH PATCH
-   These rules are placed at the end so they override earlier rules.
-   ========================================================= */
-
-/* The Presidency dropdown now uses native <details> and <summary>.
-   This lets mobile users tap Presidency to open/close the menu without JavaScript. */
 .nav-dropdown > summary {
     display: inline-flex;
     align-items: center;
@@ -1589,9 +1581,6 @@ button, input, textarea, select {
     transform: translate(-50%, 0);
 }
 
-/* Move hero text closer to the left edge.
-   The old spacing used half of the empty side space.
-   This uses roughly a quarter, so the text moves left. */
 .hero-copy {
     margin-left: max(32px, calc((100vw - 1180px) / 4));
 }
@@ -1621,8 +1610,6 @@ button, input, textarea, select {
     right: 24%;
 }
 
-/* Tools button fixed to the right edge.
-   The panel is hidden off-screen until the checkbox is checked. */
 .tools-container {
     top: 34vh;
     right: 0;
@@ -1650,8 +1637,6 @@ button, input, textarea, select {
     transform: translateX(0);
 }
 
-/* Bring back the simpler old-style video card.
-   It is a link to YouTube, but it does not load YouTube scripts. */
 .video-preview {
     background-image: none;
     background-color: var(--green);
@@ -1694,8 +1679,6 @@ button, input, textarea, select {
     color: var(--dark-green);
 }
 
-/* More stable tablet/mobile menu.
-   Fixed positioning avoids the left-right jump you saw on first hamburger click. */
 @media (max-width: 1050px) {
     body:has(.nav-check:checked) {
         overflow: hidden;
@@ -1870,15 +1853,6 @@ button, input, textarea, select {
     }
 }
 
-
-/* =========================================================
-   FINAL V4 RESPONSIVE + VISUAL POLISH
-   Added at the end so these rules override earlier rules.
-   ========================================================= */
-
-/* Prevent the mobile preview from feeling "zoomed in".
-   The main problem was horizontal overflow from large text and fixed elements.
-   These rules keep every major section inside the viewport. */
 html {
     width: 100%;
     max-width: 100%;
@@ -1937,8 +1911,6 @@ a {
     max-width: calc(100vw - 24px);
 }
 
-/* Designed YouTube thumbnail card.
-   It is still only a link, so it avoids iframe/ad-block problems. */
 .video-preview {
     min-height: 360px;
     padding: 28px;
@@ -2001,8 +1973,6 @@ a {
     box-shadow: 0 16px 35px rgba(0, 0, 0, 0.28);
 }
 
-/* Premium contact map section.
-   The map now fades into the green section instead of looking like a hard rectangle. */
 .location-section {
     position: relative;
     padding: 92px 0 96px;
@@ -2296,13 +2266,6 @@ a {
     }
 }
 
-
-/* =========================================================
-   FINAL V5 CONTACT MAP POLISH
-   The map now fades into the green background more strongly.
-   The green location section is also shorter, while the map keeps its size.
-   ========================================================= */
-
 .location-section {
     padding: 58px 0 62px;
 }
@@ -2336,8 +2299,6 @@ a {
     font-size: 0.98rem;
 }
 
-/* The map card uses green as its base colour.
-   The image itself is masked, so its edges become transparent and reveal the green behind it. */
 .location-map-card {
     background: var(--green);
     box-shadow: 0 22px 52px rgba(0, 0, 0, 0.16);
@@ -2354,8 +2315,6 @@ a {
     mask-size: 100% 100%;
 }
 
-/* Extra green overlays around the edges make the fade visible even on browsers
-   where CSS masking is slightly different. */
 .location-map-card::before {
     content: "";
     position: absolute;
@@ -2406,14 +2365,6 @@ a {
     }
 }
 
-
-/* =========================================================
-   FINAL V6 LAST POLISH
-   - Use the actual YouTube PNG instead of the text play symbol.
-   - Keep it dead-centre and slightly transparent.
-   - Restore the softer map overlay and remove the strong green edge/mask.
-   ========================================================= */
-
 /* YouTube PNG play button in the exact centre of the Broadcast thumbnail. */
 .video-preview {
     position: relative;
@@ -2452,8 +2403,6 @@ a {
     z-index: 3;
 }
 
-/* Restore the softer map style.
-   This removes the strong green edge/mask from V5. */
 .location-map-card {
     background: transparent;
     box-shadow: 0 22px 52px rgba(0, 0, 0, 0.16);
@@ -2474,8 +2423,6 @@ a {
     display: none;
 }
 
-/* Softer original-style overlay only.
-   The map remains clear, without a heavy green border around it. */
 .location-map-card::after {
     content: "";
     position: absolute;
@@ -2505,13 +2452,6 @@ a {
         height: 82px;
     }
 }
-
-
-/* =========================================================
-   FINAL V7 GALAXY S8+ AND YOUTUBE PNG SIZE FIX
-   - Better menu fit for 360px phones like Galaxy S8+.
-   - Bigger centred YouTube PNG that covers part of the text while staying visible.
-   ========================================================= */
 
 /* Bigger YouTube PNG on desktop and wider screens. */
 .video-preview .play-button {
@@ -2553,8 +2493,6 @@ a {
     }
 }
 
-/* Galaxy S8+ / small Android phone width fix.
-   Your browser screenshot showed 360px width, so this targets 360px phones. */
 @media (max-width: 380px) {
     .site-nav {
         padding: 10px 12px 22px;
@@ -2596,11 +2534,6 @@ a {
     }
 }
 
-
-/* =========================================================
-   FINAL V8 TRANSLATE + PRESS ARTICLES + MOBILE SEARCH FIX
-   ========================================================= */
-
 /* The side tab is now Translate, so it needs a little more width than Tools. */
 .tools-toggle {
     width: 132px;
@@ -2634,15 +2567,10 @@ a {
     background: var(--white);
 }
 
-/* Google may inject a top banner after translation.
-   This keeps the page from being pushed down awkwardly. */
 body {
     top: 0 !important;
 }
 
-/* Mobile header fix:
-   the search icon now sits beside the hamburger on the right,
-   instead of floating around the middle of the navbar. */
 @media (max-width: 1050px) {
     .header-inner {
         justify-content: flex-start;
@@ -2725,5 +2653,842 @@ body {
     .tools-container {
         right: 10px;
         bottom: 72px;
+    }
+}
+
+.people-card img,
+.leader-card img,
+.administration-card img {
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Homepage Administration cards specifically. */
+.administration-section .people-card img,
+.admin-card img {
+    object-position: center top;
+}
+
+/* On large screens, give portrait images a bit more vertical room so faces are not cropped tightly. */
+.administration-section .people-card .card-image,
+.leader-card .card-image,
+.people-card .card-image {
+    min-height: 420px;
+}
+
+/* If the image is directly inside the card rather than inside a .card-image wrapper. */
+.administration-section .people-card > img,
+.leader-card > img,
+.people-card > img {
+    height: 420px;
+    width: 100%;
+}
+
+/* Make homepage news cards uniform in height. */
+.news-grid {
+    align-items: stretch;
+}
+
+.news-card {
+    height: 100%;
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card p {
+    flex: 1;
+}
+
+.news-card a {
+    margin-top: auto;
+}
+
+/* If the Latest News area uses article cards without .news-card wrapper. */
+.latest-news article {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.latest-news article p {
+    flex: 1;
+}
+
+.latest-news article a {
+    margin-top: auto;
+}
+
+/* Reduce footer height and make spacing tighter. */
+.site-footer {
+    padding-top: 52px;
+    padding-bottom: 30px;
+}
+
+.footer-main {
+    gap: 32px;
+}
+
+.footer-brand {
+    gap: 16px;
+}
+
+.footer-nav {
+    gap: 14px 28px;
+}
+
+.footer-bottom {
+    padding-top: 22px;
+    margin-top: 28px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 16px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.social-links a {
+    flex: 0 0 auto;
+}
+
+/* Mobile footer fixes. */
+@media (max-width: 640px) {
+    .site-footer {
+        padding-top: 38px;
+        padding-bottom: 24px;
+    }
+
+    .footer-main {
+        gap: 24px;
+    }
+
+    .footer-brand img,
+    .footer-logo img {
+        max-width: 68px;
+        height: auto;
+    }
+
+    .footer-brand h2 {
+        font-size: 1.8rem;
+        line-height: 1.05;
+    }
+
+    .footer-brand p,
+    .footer-contact a,
+    .footer-nav a {
+        font-size: 1rem;
+        line-height: 1.45;
+    }
+
+    .footer-nav {
+        gap: 8px;
+    }
+
+    .social-links {
+        display: grid;
+        grid-template-columns: repeat(4, 58px);
+        justify-content: start;
+        gap: 14px;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .social-links a {
+        width: 58px;
+        height: 58px;
+    }
+
+    .social-links img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .footer-bottom {
+        margin-top: 22px;
+        padding-top: 18px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Extra small phone: fit icons without side overflow. */
+@media (max-width: 380px) {
+    .social-links {
+        grid-template-columns: repeat(4, 52px);
+        gap: 12px;
+    }
+
+    .social-links a {
+        width: 52px;
+        height: 52px;
+    }
+
+    .social-links img {
+        width: 31px;
+        height: 31px;
+    }
+
+    .footer-brand h2 {
+        font-size: 1.55rem;
+    }
+}
+
+/* Mobile image crop fix for leadership/admin cards. */
+@media (max-width: 640px) {
+    .administration-section .people-card .card-image,
+    .leader-card .card-image,
+    .people-card .card-image {
+        min-height: 330px;
+    }
+
+    .administration-section .people-card > img,
+    .leader-card > img,
+    .people-card > img {
+        height: 330px;
+        object-position: center top;
+    }
+
+    .news-card {
+        min-height: auto;
+    }
+}
+
+.administration-section .people-card img {
+    height: 460px;
+    object-fit: cover;
+    object-position: center 32%;
+}
+
+/* The first Administration image needs a stronger adjustment than the second one. */
+.administration-section .people-card:first-of-type img {
+    object-position: center 26%;
+    transform: translateY(-18px);
+}
+
+/* Prevent the translated image movement from creating overflow outside the rounded image frame. */
+.administration-section .people-card {
+    overflow: hidden;
+}
+
+.news-grid {
+    align-items: stretch;
+}
+
+.news-card {
+    min-height: 405px;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card h3 {
+    min-height: 6.4em;
+}
+
+.news-card p {
+    min-height: 5.6em;
+    max-height: 5.6em;
+    overflow: hidden;
+    display: block;
+}
+
+.news-card a,
+.news-card .read-more {
+    margin-top: auto;
+}
+
+/* If the homepage uses article elements directly inside the news grid, apply the same rule. */
+.news-grid article {
+    min-height: 405px;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-grid article h3 {
+    min-height: 6.4em;
+}
+
+.news-grid article p {
+    min-height: 5.6em;
+    max-height: 5.6em;
+    overflow: hidden;
+    display: block;
+}
+
+.news-grid article a {
+    margin-top: auto;
+}
+
+.footer-bottom {
+    margin-top: 12px !important;
+    padding-top: 10px !important;
+    padding-bottom: 8px !important;
+    min-height: 0 !important;
+}
+
+.footer-bottom p {
+    margin: 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.25;
+}
+
+/* Also make the full footer tighter, so the copyright area is closer to the content above. */
+.site-footer {
+    padding-top: 34px !important;
+    padding-bottom: 14px !important;
+}
+
+.footer-main {
+    gap: 20px !important;
+}
+
+.social-links {
+    margin-top: 10px !important;
+}
+
+/* Mobile footer must not become tall again. */
+@media (max-width: 640px) {
+    .site-footer {
+        padding-top: 28px !important;
+        padding-bottom: 14px !important;
+    }
+
+    .footer-bottom {
+        margin-top: 14px !important;
+        padding-top: 10px !important;
+        padding-bottom: 6px !important;
+    }
+
+    .footer-bottom p {
+        font-size: 0.9rem;
+        line-height: 1.25;
+    }
+
+    .administration-section .people-card img {
+        height: 360px;
+        object-position: center 28%;
+    }
+
+    .administration-section .people-card:first-of-type img {
+        transform: translateY(-14px);
+    }
+
+    .news-card,
+    .news-grid article {
+        min-height: auto;
+    }
+
+    .news-card h3,
+    .news-grid article h3 {
+        min-height: auto;
+    }
+
+    .news-card p,
+    .news-grid article p {
+        min-height: auto;
+        max-height: none;
+    }
+}
+
+.administration-section .leader-mini-grid article {
+    overflow: hidden;
+}
+
+.administration-section .leader-mini-grid img {
+    height: 420px !important;
+    width: 100%;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #ffffff;
+    transform: none !important;
+}
+
+/* Keep the second portrait consistent as well. */
+.administration-section .leader-mini-grid article:first-child img,
+.administration-section .leader-mini-grid article:nth-child(2) img {
+    object-fit: contain !important;
+    object-position: center center !important;
+    transform: none !important;
+}
+
+.news-track {
+    align-items: stretch;
+}
+
+.news-track .news-card {
+    min-height: 405px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.news-track .news-card h3 {
+    min-height: 7.3em !important;
+    margin-bottom: 18px;
+}
+
+.news-track .news-card p {
+    min-height: 4.8em !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: block !important;
+    margin-bottom: 22px;
+}
+
+.news-track .news-card a {
+    margin-top: auto !important;
+}
+
+.site-footer .footer-inner {
+    padding-top: 34px !important;
+    padding-bottom: 18px !important;
+    gap: 22px !important;
+}
+
+.site-footer .footer-bottom {
+    margin: 0 !important;
+    padding: 10px 20px 14px !important;
+    min-height: 0 !important;
+}
+
+.site-footer .footer-bottom p {
+    margin: 0 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.25 !important;
+}
+
+/* Reduce empty space around social icons on desktop. */
+.site-footer .social-links {
+    margin-top: 0 !important;
+    align-self: center;
+}
+
+/* Mobile-specific tightening. */
+@media (max-width: 640px) {
+    .administration-section .leader-mini-grid img {
+        height: 330px !important;
+        object-fit: contain !important;
+    }
+
+    .news-track .news-card {
+        min-height: auto !important;
+    }
+
+    .news-track .news-card h3 {
+        min-height: auto !important;
+    }
+
+    .news-track .news-card p {
+        min-height: auto !important;
+        margin-bottom: 16px;
+    }
+
+    .site-footer .footer-inner {
+        padding-top: 26px !important;
+        padding-bottom: 12px !important;
+        gap: 18px !important;
+    }
+
+    .site-footer .footer-bottom {
+        padding: 8px 18px 10px !important;
+    }
+}
+
+.administration-section .leader-mini-grid article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.administration-section .leader-mini-grid img {
+    width: min(76%, 430px) !important;
+    height: 430px !important;
+    margin: 0 auto 24px !important;
+    display: block;
+    object-fit: cover !important;
+    object-position: center 30% !important;
+    background: transparent !important;
+    border-radius: 18px;
+}
+
+/* Fine tune the first portrait so the full face reads better. */
+.administration-section .leader-mini-grid article:first-child img {
+    object-position: center 28% !important;
+}
+
+/* Keep the text aligned with the new narrower image frame. */
+.administration-section .leader-mini-grid article h3,
+.administration-section .leader-mini-grid article p {
+    width: min(76%, 430px);
+    align-self: center;
+}
+
+/* Mobile: allow the image to use more width because the screen is already narrow. */
+@media (max-width: 640px) {
+    .administration-section .leader-mini-grid img {
+        width: 100% !important;
+        height: 330px !important;
+        object-position: center 30% !important;
+    }
+
+    .administration-section .leader-mini-grid article h3,
+    .administration-section .leader-mini-grid article p {
+        width: 100%;
+    }
+}
+
+.administration-section .leader-mini-grid article {
+    padding: 24px 24px 42px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.administration-section .leader-mini-grid img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 430px !important;
+    margin: 0 0 34px !important;
+    display: block;
+    object-fit: cover !important;
+    object-position: center 30% !important;
+    background: transparent !important;
+    border-radius: 18px;
+}
+
+/* Fine tune Tinubu's portrait so the full face remains visible after widening the image. */
+.administration-section .leader-mini-grid article:first-child img {
+    object-position: center 28% !important;
+}
+
+/* Center the name/title below the image. */
+.administration-section .leader-mini-grid article h3,
+.administration-section .leader-mini-grid article p {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    align-self: center;
+}
+
+/* Keep the name close to the picture, but still in the thicker bottom green area. */
+.administration-section .leader-mini-grid article h3 {
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+}
+
+.administration-section .leader-mini-grid article p {
+    margin-bottom: 0 !important;
+}
+
+/* Mobile: keep the same idea with smaller padding. */
+@media (max-width: 640px) {
+    .administration-section .leader-mini-grid article {
+        padding: 16px 16px 30px !important;
+    }
+
+    .administration-section .leader-mini-grid img {
+        height: 330px !important;
+        margin-bottom: 24px !important;
+        object-position: center 30% !important;
+    }
+
+    .administration-section .leader-mini-grid article:first-child img {
+        object-position: center 28% !important;
+    }
+}
+
+/* Very small phones. */
+@media (max-width: 380px) {
+    .administration-section .leader-mini-grid article {
+        padding: 14px 14px 26px !important;
+    }
+
+    .administration-section .leader-mini-grid img {
+        height: 300px !important;
+    }
+}
+
+/* Make Administration image side and top padding thinner while keeping bottom space for text. */
+.administration-section .leader-mini-grid article {
+    padding: 12px 12px 42px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Make the portrait fill the card width so the side green bars are much thinner. */
+.administration-section .leader-mini-grid img {
+    width: 100% !important;
+    max-width: none !important;
+    height: 430px !important;
+    margin: 0 0 34px !important;
+    display: block;
+    object-fit: cover !important;
+    object-position: center 30% !important;
+    background: transparent !important;
+    border-radius: 18px;
+}
+
+/* Fine tune the first portrait so the face remains properly visible. */
+.administration-section .leader-mini-grid article:first-child img {
+    object-position: center 28% !important;
+}
+
+/* Keep the name and title centered under each portrait. */
+.administration-section .leader-mini-grid article h3,
+.administration-section .leader-mini-grid article p {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    align-self: center;
+}
+
+/* Keep the bottom text area neat and balanced. */
+.administration-section .leader-mini-grid article h3 {
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+}
+
+.administration-section .leader-mini-grid article p {
+    margin-bottom: 0 !important;
+}
+
+/* Keep news text visible without browser-specific line clamp warnings. */
+.news-track .news-card p,
+.news-card p,
+.news-grid article p {
+    max-height: none !important;
+    overflow: visible !important;
+    display: block !important;
+}
+
+/* Keep Read More aligned at the bottom of each news card. */
+.news-track .news-card,
+.news-card,
+.news-grid article {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.news-track .news-card a,
+.news-card a,
+.news-grid article a {
+    margin-top: auto !important;
+}
+
+/* Mobile Administration cards use smaller padding and image height. */
+@media (max-width: 640px) {
+    .administration-section .leader-mini-grid article {
+        padding: 10px 10px 28px !important;
+    }
+
+    .administration-section .leader-mini-grid img {
+        height: 330px !important;
+        margin-bottom: 24px !important;
+    }
+}
+
+/* Small phones keep the portrait compact. */
+@media (max-width: 380px) {
+    .administration-section .leader-mini-grid article {
+        padding: 8px 8px 24px !important;
+    }
+
+    .administration-section .leader-mini-grid img {
+        height: 300px !important;
+    }
+}
+
+/* Make Administration cards have about 30px top/side padding and a larger bottom text area. */
+.administration-section .leader-mini-grid article {
+    padding: 30px 30px 48px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Make the portrait fill the available card width so the green side gaps are about the card padding only. */
+.administration-section .leader-mini-grid article > img {
+    width: 100% !important;
+    max-width: none !important;
+    height: 430px !important;
+    margin: 0 0 34px !important;
+    display: block;
+    object-fit: cover !important;
+    object-position: center 30% !important;
+    border-radius: 18px;
+    background: transparent !important;
+    transform: none !important;
+}
+
+/* Keep Tinubu's portrait framed slightly higher inside the image box. */
+.administration-section .leader-mini-grid article:first-child > img {
+    object-position: center 28% !important;
+}
+
+/* Center the Administration name and title under each portrait. */
+.administration-section .leader-mini-grid article h3,
+.administration-section .leader-mini-grid article p {
+    width: 100% !important;
+    text-align: center !important;
+    align-self: center;
+}
+
+/* Make the footer compact and balanced on desktop. */
+.site-footer {
+    padding: 0 !important;
+}
+
+/* Reduce the main footer content height. */
+.site-footer .footer-inner {
+    padding: 30px 0 18px !important;
+    gap: 18px !important;
+}
+
+/* Align the footer columns professionally. */
+.site-footer .footer-main {
+    display: grid !important;
+    grid-template-columns: 1.1fr 1fr 0.8fr !important;
+    align-items: center !important;
+    gap: 28px !important;
+}
+
+/* Keep footer navigation tidy. */
+.site-footer .footer-nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px 24px !important;
+}
+
+/* Keep social icons aligned as one clean group. */
+.site-footer .social-links {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    overflow: visible !important;
+}
+
+/* Reduce social icon circle size slightly so they fit better. */
+.site-footer .social-links a {
+    width: 52px !important;
+    height: 52px !important;
+}
+
+/* Keep social media images visible inside the circles. */
+.site-footer .social-links img {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+/* Make the copyright strip shorter. */
+.site-footer .footer-bottom {
+    margin: 0 !important;
+    padding: 8px 16px 10px !important;
+    min-height: 0 !important;
+}
+
+/* Reduce copyright text height. */
+.site-footer .footer-bottom p {
+    margin: 0 !important;
+    font-size: 0.88rem !important;
+    line-height: 1.2 !important;
+}
+
+/* Make the footer compact on phones. */
+@media (max-width: 640px) {
+    .site-footer .footer-inner {
+        padding: 24px 18px 12px !important;
+        gap: 16px !important;
+    }
+
+    .site-footer .footer-main {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+        align-items: start !important;
+    }
+
+    .site-footer .footer-brand {
+        gap: 12px !important;
+    }
+
+    .site-footer .footer-brand h2 {
+        font-size: 1.55rem !important;
+        line-height: 1.05 !important;
+        margin: 0 !important;
+    }
+
+    .site-footer .footer-brand p,
+    .site-footer .footer-contact a,
+    .site-footer .footer-nav a {
+        font-size: 0.95rem !important;
+        line-height: 1.35 !important;
+    }
+
+    .site-footer .footer-nav {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        justify-content: start !important;
+    }
+
+    .site-footer .social-links {
+        display: grid !important;
+        grid-template-columns: repeat(5, 46px) !important;
+        justify-content: start !important;
+        gap: 8px !important;
+        width: 100% !important;
+        overflow: visible !important;
+    }
+
+    .site-footer .social-links a {
+        width: 46px !important;
+        height: 46px !important;
+    }
+
+    .site-footer .social-links img {
+        width: 26px !important;
+        height: 26px !important;
+    }
+
+    .site-footer .footer-bottom {
+        padding: 8px 14px 10px !important;
+    }
+}
+
+/* Keep Administration cards compact on phones. */
+@media (max-width: 640px) {
+    .administration-section .leader-mini-grid article {
+        padding: 16px 16px 30px !important;
+    }
+
+    .administration-section .leader-mini-grid article > img {
+        height: 330px !important;
+        margin-bottom: 24px !important;
+    }
+}
+
+/* Keep footer icons in one row on 360px devices. */
+@media (max-width: 380px) {
+    .site-footer .social-links {
+        grid-template-columns: repeat(5, 42px) !important;
+        gap: 6px !important;
+    }
+
+    .site-footer .social-links a {
+        width: 42px !important;
+        height: 42px !important;
+    }
+
+    .site-footer .social-links img {
+        width: 24px !important;
+        height: 24px !important;
     }
 }
